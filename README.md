@@ -230,3 +230,11 @@ docker logs indexer
 ```
 
 ---
+
+# Stopper tout
+
+docker compose down
+
+# Relancer tout
+
+docker compose up -d
