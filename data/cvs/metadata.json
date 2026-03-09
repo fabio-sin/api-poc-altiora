@@ -1,0 +1,14 @@
+{
+  "cv_jean_dupont.pdf": {
+    "classification": "restricted",
+    "modified_by": "rh@altiora.com"
+  },
+  "cv_sophie_martin.pdf": {
+    "classification": "public",
+    "modified_by": "rh@altiora.com"
+  },
+  "cv_karim_benali.pdf": {
+    "classification": "restricted",
+    "modified_by": "rh@altiora.com"
+  }
+}

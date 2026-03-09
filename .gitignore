@@ -1,0 +1,8 @@
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Docker volumes
+qdrant_data/
+redis_data/

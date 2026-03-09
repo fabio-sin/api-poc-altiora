@@ -1,0 +1,6 @@
+qdrant-client
+sentence-transformers
+pdfplumber
+langchain
+langchain-text-splitters
+python-dotenv
