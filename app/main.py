@@ -8,6 +8,7 @@ from fastapi import FastAPI, Header, HTTPException
 from redis.asyncio import Redis
 from app.session import get_history, append_to_history, clear_history
 from prometheus_fastapi_instrumentator import Instrumentator
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.models import (
     User,
@@ -36,6 +37,14 @@ REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
 CACHE_TTL = int(os.getenv("CACHE_TTL", 3600))  # 1h par défaut
 
 app = FastAPI(title="Altiora AI Orchestrator", version="0.1.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:4200"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 Instrumentator().instrument(app).expose(app)
 redis: Redis = None
 

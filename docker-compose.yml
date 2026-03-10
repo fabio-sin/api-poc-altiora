@@ -58,6 +58,19 @@ services:
       - redis
     restart: unless-stopped
 
+  frontend:
+    build:
+      context: ../frontend_altiora
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "4200:4200"
+    volumes:
+      - ../frontend_altiora/src:/app/src   # hot reload sur les fichiers src
+    depends_on:
+      - api
+    restart: unless-stopped
+
 volumes:
   qdrant_data:
   redis_data:
